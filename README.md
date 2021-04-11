@@ -1,3 +1,5 @@
+Little fork fixing AMD Issues due to inactivity on the original repo
+
 optimus-manager
 ==================
 
