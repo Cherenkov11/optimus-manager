@@ -69,7 +69,7 @@ def do_xsetup(requested_mode):
 
         try:
             for cmd in [
-                "xrandr --setprovideroutputsource modesetting NVIDIA-0",
+                "xrandr --setprovideroutputsource 1 NVIDIA-0",
                 "xrandr --auto"
             ]:
                 subprocess.check_call(
@@ -173,7 +173,7 @@ def _generate_nvidia(config, bus_ids, xorg_extra):
 
     text += "Section \"Device\"\n" \
             "\tIdentifier \"integrated\"\n" \
-            "\tDriver \"modesetting\"\n"
+            "\tDriver \"amdgpu\"\n"
     text += "\tBusID \"%s\"\n" % bus_ids[integrated_gpu]
     for line in xorg_extra_integrated:
         text += ("\t" + line + "\n")
